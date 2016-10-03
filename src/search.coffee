@@ -134,7 +134,7 @@ module.exports = (robot) ->
     # Listener: Google Custom Search
     if GOOGLE_API_KEY? and GOOGLE_CUSTOM_SEARCH?
         google = new GoogleSearch robot
-        robot.respond /(search|google) (.+)/i, id: "search.google", (res) =>
+        robot.respond /(google) (.+)/i, id: "search.google", (res) =>
             q = res.match[2]
             google.search q, (results) =>
                 res.send results
